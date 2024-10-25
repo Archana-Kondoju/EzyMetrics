@@ -1,5 +1,5 @@
 /**
- * The Dashboard component is the main view for the application's dashboard. It displays various widgets with data from the `dashboardData` object, and allows the user to drag and drop the widgets to reorder them.
+ * The Dashboard component is the main view for the application's dashboard. It displays various widgets with data from the `metrics` object, and allows the user to drag and drop the widgets to reorder them.
  *
  * The component uses the `react-beautiful-dnd` library to handle the drag and drop functionality. The `handleDragEnd` function is called when the user drops a widget, and it updates the `widgets` state to reflect the new order.
  *
@@ -7,14 +7,14 @@
  */
 import React, { useState } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-import { dashboardData } from '../data';
+import { metrics } from '../dummyData';
 
 const Dashboard = () => {
   const [widgets, setWidgets] = useState([
-    { id: 'totalLeads', title: 'Total Leads', value: dashboardData.totalLeads },
-    { id: 'totalRevenue', title: 'Total Revenue', value: dashboardData.totalRevenue },
-    { id: 'conversionRate', title: 'Conversion Rate', value: dashboardData.conversionRate },
-    { id: 'pendingTasks', title: 'Pending Tasks', value: dashboardData.pendingTasks },
+    { id: 'totalLeads', title: 'Total Leads', value: metrics.totalLeads },
+    { id: 'totalRevenue', title: 'Total Revenue', value: metrics.totalRevenue },
+    { id: 'conversionRate', title: 'Conversion Rate', value: metrics.conversionRate },
+    { id: 'pendingTasks', title: 'Pending Tasks', value: metrics.pendingTasks },
   ]);
 
   // Handle drag and drop logic
